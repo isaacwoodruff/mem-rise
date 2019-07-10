@@ -4,8 +4,9 @@ body {
     text-align: center;
     font-family: 'Audiowide', cursive;
     background-image: url("../images/sun.jpg");
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     background-color: #282c5b;
 }
 
@@ -21,9 +22,7 @@ h1 {
   justify-content: center;
 }
 
-
-
-
+/* Game view */
 .symbol {
     width: 80px;
 }
