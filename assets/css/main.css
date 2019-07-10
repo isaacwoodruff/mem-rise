@@ -22,6 +22,12 @@ h1 {
   justify-content: center;
 }
 
+/* Main menu */
+.main-menu .vertical-wrapper .help-menu-link:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
 /* Game view */
 .symbol {
     width: 80px;
