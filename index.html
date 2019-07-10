@@ -8,12 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- style sheets -->
-    <link rel="stylesheet" href="main.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee+Inline&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"> 
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
     
     <title>Mem'rise</title>
 </head>
 
-<body>
+<body class="darken">
     <header>
         <div class="difficulty">
 
@@ -28,31 +31,38 @@
             
         </button>
     </header>
-    <section class="main-menu">
-        <h1>Mem'rise</h1>
-
-        <button>Start</button>
-        <h3>How to play?</h3>
-
-        <h2>Leaderboard</h2>
-        <div class="leaderboard-player-score">
-
+    <section class="main-menu vertical-center">
+        <div class="vertical-wrapper">
+            <h1>Mem'rise</h1>
+    
+            <button>Start</button>
+            <h3>How to play?</h3>
+    
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-player-score">
+    
+            </div>
         </div>
     </section>
-    <section class="help-menu">
+    <section class="help-menu d-none">
         <h1>How To Play</h1>
-
-        <p></p>
     </section>
-    <section class="game-area">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-
+    <section class="menu-list d-none">
+        <ul>
+            <li>Main Menu</li>
+            <li>Help</li>
+        </ul>
+    </section>
+    <section class="game-area d-none">
+        <div class="symbol-set">
+            <img class="symbol" src="assets/images/blue-symbol.svg"></img>
+            <img class="symbol" src="assets/images/yellow-symbol.svg"></img>
+            <img class="symbol" src="assets/images/green-symbol.svg"></img>
+            <img class="symbol" src="assets/images/purple-symbol.svg"></img>
+            <img class="symbol" src="assets/images/orange-symbol.svg"></img>
+        </div>
         <h3>Click Ready To Begin</h3>
-
+        
         <button>Ready</button>
     </section>
 </body>

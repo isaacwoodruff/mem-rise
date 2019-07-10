@@ -1,0 +1,30 @@
+/* Global styles */
+
+body {
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    background-image: url("../images/sun.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #282c5b;
+}
+
+h1 {
+    font-family: 'Bungee Inline', cursive;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.symbol {
+    width: 80px;
+}
+
