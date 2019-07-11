@@ -22,8 +22,7 @@ h1 {
   justify-content: center;
 }
 
-/* Main menu */
-.main-menu .vertical-wrapper .help-menu-link:hover {
+.white-on-hover:hover {
     color: #FFF;
     cursor: pointer;
 }
