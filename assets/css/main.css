@@ -28,7 +28,29 @@ h1 {
 }
 
 /* Game view */
+.symbol-set {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
 .symbol {
     width: 80px;
 }
 
+.top-row {
+  display: flex;
+  justify-content: center;
+}
+
+.middle-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}

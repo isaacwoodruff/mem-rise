@@ -22,7 +22,9 @@ $('.fa-bars').click(function() {
     $('.back-and-menu-icons, .menu-list').removeClass('d-none');
 });
 
-// When back arrow icon is clicked it hides help menu, menu list and main menu, then shows game view
+/* When back arrow icon is clicked
+if game view is not the current window it hides help menu, menu list and main menu, then shows game view
+else it hides the game view, back/menu icons, then shows main menu*/
 $('.fa-arrow-left').click(function() {
     if(!$('.game-view').hasClass('d-none')){
         $('.game-view, .back-and-menu-icons').addClass('d-none');
@@ -32,3 +34,12 @@ $('.fa-arrow-left').click(function() {
         $('.game-view, .back-and-menu-icons').removeClass('d-none');
     }
 });
+
+
+
+var game = {
+  count: 0,
+  possibilities: ['#green','#blue', '#orange', '#purple', '#yellow'],
+  currentGame: [],
+  player: []
+}
