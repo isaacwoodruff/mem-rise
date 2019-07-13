@@ -56,9 +56,46 @@ var game = {
     count: 0
 };
 
-
+/* 
+    This function highlights the symbol/currentGame value so the user can see
+    which image they have to click
+*/
 function highlightSelections() {
+    for (let i = 0; i < game.currentGame.length; i++) {
+        console.log('this is the i number' + i);
+        console.log('this is game.currentGame[i] befoe timeout' + game.currentGame[i]);
 
+        /*
+            When the variable i is equal to 0 then the outer setTimeout method will last 0 seconds
+            because if the time was multiplied by i it would last the same amount of time as when
+            the variable i equals 1. This would cause the first and second currentGame value to
+            display at the same time. So instead, this instantly shows the first currentGame value.
+        */
+        if (i == 0) {
+            setTimeout(() => {
+                $(game.currentGame[i]).addClass('highlight');
+                setTimeout(function() {
+                    console.log('this is game.currentGame[i] inside timeout' + game.currentGame[i]);
+                    $(game.currentGame[i]).removeClass('highlight');
+                    console.log('first setting');
+                }, 1000);
+            }, 0);
+            /*
+                When variable i is equal to anything besides 0 the setTimeout methods will multiply
+                i by 1000. This will show the currentGame values 1 second after each other.
+            */
+        }
+        else {
+            setTimeout(() => {
+                $(game.currentGame[i]).addClass('highlight');
+                setTimeout(function() {
+                    console.log('this is game.currentGame[i] inside timeout' + game.currentGame[i]);
+                    $(game.currentGame[i]).removeClass('highlight');
+                    console.log('second setting');
+                }, i * 1000);
+            }, i * 1000);
+        }
+    }
 }
 
 /*
@@ -86,3 +123,9 @@ function newGame() {
     game.count = 0;
     addCount();
 }
+
+$('.start-btn').click(function() {
+    if (!$('.game-view').hasClass('d-none')) {
+        newGame();
+    }
+});
