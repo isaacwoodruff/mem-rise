@@ -97,8 +97,8 @@ function highlightSelections() {
     for (let i = 0; i < game.currentGame.length; i++) {
         timer(i);
     }
-    
-    function timer(i){
+
+    function timer(i) {
         /*
             If i is equal to 0 this instantly highlights the first currentGame value.
             Then it removes the highlight class after some time.
@@ -108,12 +108,13 @@ function highlightSelections() {
             setTimeout(function() {
                 $(game.currentGame[i]).removeClass('highlight');
             }, 1000);
-        /*
-            When variable i is equal to anything besides 0 the outer setTimeout method will
-            multiply i by 1000. This will show the currentGame values 1 second after each other.
-            Then it removes the highlight class after some time.
-        */
-        }else {
+            /*
+                When variable i is equal to anything besides 0 the outer setTimeout method will
+                multiply i by 1000. This will show the currentGame values 1 second after each other.
+                Then it removes the highlight class after some time.
+            */
+        }
+        else {
             setTimeout(function() {
                 $(game.currentGame[i]).addClass('highlight');
                 setTimeout(function() {
@@ -130,7 +131,7 @@ function highlightSelections() {
     of the selected values in game.currentGame, it resets the users previous selections
     in game.player to allow the user to start the new selections
 */
-function resetPlayer(){
+function resetPlayer() {
     game.player = [];
 }
 
@@ -138,17 +139,38 @@ function resetPlayer(){
     Adds a click event listener for each value in the game.symbolsArray, then when a user
     clicks on a game symbol it pushes the ID of said symbol to the game.player array
 */
-function playerClickListener(){
-    for (let i = 0; i < game.symbolsArray.length; i++){
+function playerClickListener() {
+    for (let i = 0; i < game.symbolsArray.length; i++) {
         let symbolSetArrayValue = game.symbolsArray[i];
-        $(symbolSetArrayValue).click(function(){
+        $(symbolSetArrayValue).click(function() {
             game.player.push(symbolSetArrayValue);
             console.log(game.player);
+            checkPlayerSelection();
         });
     }
 }
 
 playerClickListener();
+
+/*
+    This checks the players selection (game.player) against the current game
+    selection (game.currentGame). If the length of both is the same, then it 
+    compares the values within the two arrays. If they are the same it calls
+    the function addCount() to start the next move. If the values are not
+    the same then it ends the current game by calling the function newGame()
+    which starts resets the game.currentGame array
+*/
+function checkPlayerSelection() {
+    if (game.player.length == game.currentGame.length) {
+        if (game.player.toString() === game.currentGame.toString()) {
+            console.log('checkPlayerSelection is True')
+            addCount();
+        }else {
+            console.log('checkPlayerSelection is false')
+            newGame();
+        }
+    }
+}
 
 $('.start-btn').click(function() {
     if (!$('.game-view').hasClass('d-none')) {

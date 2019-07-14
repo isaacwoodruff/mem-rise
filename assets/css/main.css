@@ -1,17 +1,17 @@
 /* Global styles */
 
 body {
-    text-align: center;
-    font-family: 'Audiowide', cursive;
-    background-image: url("../images/sun.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-color: #282c5b;
+  text-align: center;
+  font-family: 'Audiowide', cursive;
+  background-image: url("../images/sun.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #282c5b;
 }
 
 h1 {
-    font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Inline', cursive;
 }
 
 .vertical-center {
@@ -23,21 +23,24 @@ h1 {
 }
 
 .white-on-hover:hover {
-    color: #FFF;
-    cursor: pointer;
+  color: #FFF;
+  cursor: pointer;
 }
 
 /* Game view */
+
 .symbol-set {
-    max-width: 500px;
-    margin: 20px auto;
+  max-width: 500px;
+  margin: 20px auto;
 }
 
 .symbol {
-    width: 80px;
+  width: 80px;
+  cursor: pointer;
 }
 
 /* Temp styling for testing */
+
 .highlight {
   background: black;
 }
