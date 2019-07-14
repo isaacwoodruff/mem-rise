@@ -87,38 +87,37 @@ function generateMove() {
     highlightSelections();
 }
 
+/*
+    This function highlights the values in the game.currentGame array by adding a CSS class.
+    The class is then removed after a short amount of time and moves onto the next value in
+    the array. It loops through each value in game.currentGame and passes the value to the
+    function timer(i). The function resetPlayer is called at the end of the selections.
+*/
 function highlightSelections() {
     for (let i = 0; i < game.currentGame.length; i++) {
-        console.log('this is the i number' + i);
-        console.log('this is game.currentGame[i] befoe timeout' + game.currentGame[i]);
         timer(i);
     }
     
     function timer(i){
         /*
-            When the variable i is equal to 0 then the outer setTimeout method will last 0 seconds
-            because if the time was multiplied by i it would last the same amount of time as when
-            the variable i equals 1. This would cause the first and second currentGame value to
-            display at the same time. So instead, this instantly shows the first currentGame value.
+            If i is equal to 0 this instantly highlights the first currentGame value.
+            Then it removes the highlight class after some time.
         */
         if (i == 0) {
             $(game.currentGame[i]).addClass('highlight');
             setTimeout(function() {
-                console.log('this is game.currentGame[i] inside timeout' + game.currentGame[i]);
                 $(game.currentGame[i]).removeClass('highlight');
-                console.log('first setting');
             }, 1000);
         /*
             When variable i is equal to anything besides 0 the outer setTimeout method will
             multiply i by 1000. This will show the currentGame values 1 second after each other.
+            Then it removes the highlight class after some time.
         */
         }else {
             setTimeout(function() {
                 $(game.currentGame[i]).addClass('highlight');
                 setTimeout(function() {
-                    console.log('this is game.currentGame[i] inside timeout' + game.currentGame[i]);
                     $(game.currentGame[i]).removeClass('highlight');
-                    console.log('second setting');
                 }, 1000);
             }, i * 1000);
         }
@@ -127,13 +126,29 @@ function highlightSelections() {
 }
 
 /*
-    Resets game.player to undiffined so that when the highlightSelection function
-    has displayed all of the selected values in game.currentGame, it resets the users
-    previous selections in game.player
+    Resets game.player so that when the highlightSelection function has displayed all
+    of the selected values in game.currentGame, it resets the users previous selections
+    in game.player to allow the user to start the new selections
 */
 function resetPlayer(){
     game.player = [];
 }
+
+/*
+    Adds a click event listener for each value in the game.symbolsArray, then when a user
+    clicks on a game symbol it pushes the ID of said symbol to the game.player array
+*/
+function playerClickListener(){
+    for (let i = 0; i < game.symbolsArray.length; i++){
+        let symbolSetArrayValue = game.symbolsArray[i];
+        $(symbolSetArrayValue).click(function(){
+            game.player.push(symbolSetArrayValue);
+            console.log(game.player);
+        });
+    }
+}
+
+playerClickListener();
 
 $('.start-btn').click(function() {
     if (!$('.game-view').hasClass('d-none')) {
