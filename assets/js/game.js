@@ -172,8 +172,10 @@ function checkPlayerSelection() {
     }
 }
 
-$('.start-btn').click(function() {
-    if (!$('.game-view').hasClass('d-none')) {
+$('.ready-btn').click(function() {
+    $('#game-view-text').text("Let's go!");
+    setTimeout(function(){
+        $('#game-view-text').text("");
         newGame();
-    }
+    }, 1000)
 });
