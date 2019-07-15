@@ -158,7 +158,7 @@ playerClickListener();
     compares the values within the two arrays. If they are the same it calls
     the function addCount() to start the next move. If the values are not
     the same then it ends the current game by calling the function newGame()
-    which starts resets the game.currentGame array
+    which resets the game.currentGame array
 */
 function checkPlayerSelection() {
     if (game.player.length == game.currentGame.length) {
