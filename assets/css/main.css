@@ -12,14 +12,14 @@ body {
 }
 
 h1 {
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Shade', cursive;
   color: #ff00a8;
   text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
 }
 
 .btn {
   border-radius: 5px;
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Bungee Shade', cursive;
   background-color: #211531;
   color: #ff00a8;
   text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
