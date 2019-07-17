@@ -204,7 +204,8 @@ function checkPlayerSelection() {
             addCount();
         }else {
             console.log('checkPlayerSelection is false');
-            newGame();
+            $('#game-view-text').text("Wrong move! Try again");
+            $('.ready-btn').removeClass('d-none');
         }
     }
 }
