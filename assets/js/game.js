@@ -153,7 +153,7 @@ function highlightSelections() {
                 setTimeout(function() {
                     $(game.currentGame[i]).removeClass('highlight');
                 }, 1000);
-            }, i * 1000);
+            }, i * 1120);
         }
     }
     resetPlayer();
