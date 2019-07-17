@@ -40,6 +40,30 @@ $('.fa-arrow-left').click(function() {
     }
 });
 
+// Text Animations
+
+/*
+    This uses the textillate.js plugin along with animate.css and lettering.js libraries
+    to create a flashing text animation
+*/
+$('.text-flash').textillate({
+    in: {
+        effect: 'flash',
+        //shuffle: true,
+        //sync: true,
+        delayScale: 2,
+        delay: 50,
+    },
+    out: {
+        effect: 'flash',
+        //shuffle: true,
+        //sync: true,
+        delayScale: 2,
+        delay: 50
+    },
+    loop: true
+});
+
 
 // Game
 
@@ -152,6 +176,10 @@ function playerClickListener() {
     for (let i = 0; i < game.symbolsArray.length; i++) {
         let symbolSetArrayValue = game.symbolsArray[i];
         $(symbolSetArrayValue).click(function() {
+            $(symbolSetArrayValue).addClass('highlight');
+            setTimeout(function() {
+                $(symbolSetArrayValue).removeClass('highlight');
+            }, 100);
             game.player.push(symbolSetArrayValue);
             checkPlayerSelection();
         });
@@ -195,26 +223,4 @@ $('.ready-btn').click(function() {
         $('#game-view-text').text("");
         newGame();
     }, 1000);
-});
-
-/*
-    This uses the textillate.js plugin along with animate.css and lettering.js libraries
-    to create a flashing text animation
-*/
-$('.text-flash').textillate({
-    in: {
-        effect: 'flash',
-        //shuffle: true,
-        //sync: true,
-        delayScale: 2,
-        delay: 50,
-    },
-    out: {
-        effect: 'flash',
-        //shuffle: true,
-        //sync: true,
-        delayScale: 2,
-        delay: 50
-    },
-    loop: true
 });
