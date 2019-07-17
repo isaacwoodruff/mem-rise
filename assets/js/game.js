@@ -174,6 +174,7 @@ function checkPlayerSelection() {
 
 $('.ready-btn').click(function() {
     $('#game-view-text').text("Let's go!");
+    $('.ready-btn').addClass('d-none');
     setTimeout(function(){
         $('#game-view-text').text("");
         newGame();
