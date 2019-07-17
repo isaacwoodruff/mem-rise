@@ -80,15 +80,7 @@ function addCount() {
     $('#scoreNumber').html(game.count);
     game.count++;
     
-    // When the continue button is clicked it will hide itself and continue to the next move
-    if(!$('.continue-btn').hasClass('d-none')){
-        $('.continue-btn').click(function() {
-            $('.continue-btn').addClass('d-none');
-            setTimeout(function(){
-                generateMove();
-            }, 500)
-        });
-    }else{
+    if($('.continue-btn').hasClass('d-none')){
         generateMove();
     }
 }
@@ -159,7 +151,6 @@ function playerClickListener() {
         let symbolSetArrayValue = game.symbolsArray[i];
         $(symbolSetArrayValue).click(function() {
             game.player.push(symbolSetArrayValue);
-            console.log(game.player);
             checkPlayerSelection();
         });
     }
@@ -178,15 +169,21 @@ playerClickListener();
 function checkPlayerSelection() {
     if (game.player.length == game.currentGame.length) {
         if (game.player.toString() === game.currentGame.toString()) {
-            console.log('checkPlayerSelection is True')
+            console.log('checkPlayerSelection is True');
             $('.continue-btn').removeClass('d-none');
             addCount();
         }else {
-            console.log('checkPlayerSelection is false')
+            console.log('checkPlayerSelection is false');
             newGame();
         }
     }
 }
+
+// When the continue button is clicked it will hide itself and continue to the next move
+$('.continue-btn').click(function() {
+    $('.continue-btn').addClass('d-none');
+    generateMove();
+});
 
 // When the ready button is clicked it will hide itself and start a new game
 $('.ready-btn').click(function() {
@@ -195,5 +192,5 @@ $('.ready-btn').click(function() {
     setTimeout(function(){
         $('#game-view-text').text("");
         newGame();
-    }, 1000)
+    }, 1000);
 });
