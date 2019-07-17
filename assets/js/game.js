@@ -69,13 +69,28 @@ function newGame() {
 }
 
 /*  
-    Changes the score to match the counter (game.count), adds 1 onto counter
-    and calls a function that generates the game move (generateMove())
+    Changes the score to match the counter (game.count), adds 1 onto counter and
+    checks to see if the continue button is visible (or does NOT have the class 
+    'd-none'), if this is true it adds a click event listener to the button. If
+    clicked it hides itself and generates a new move, generateMove(). If the button is not visible,
+    which means its at the start of a new game, it calls a function that generates
+    a new move, generateMove()
 */
 function addCount() {
     $('#scoreNumber').html(game.count);
     game.count++;
-    generateMove();
+    
+    // When the continue button is clicked it will hide itself and continue to the next move
+    if(!$('.continue-btn').hasClass('d-none')){
+        $('.continue-btn').click(function() {
+            $('.continue-btn').addClass('d-none');
+            setTimeout(function(){
+                generateMove();
+            }, 500)
+        });
+    }else{
+        generateMove();
+    }
 }
 
 /*
@@ -165,20 +180,13 @@ function checkPlayerSelection() {
         if (game.player.toString() === game.currentGame.toString()) {
             console.log('checkPlayerSelection is True')
             $('.continue-btn').removeClass('d-none');
+            addCount();
         }else {
             console.log('checkPlayerSelection is false')
             newGame();
         }
     }
 }
-
-// When the continue button is clicked it will hide itself and continue to the next move
-$('.continue-btn').click(function() {
-    $('.continue-btn').addClass('d-none');
-    setTimeout(function(){
-        addCount();
-    }, 500)
-});
 
 // When the ready button is clicked it will hide itself and start a new game
 $('.ready-btn').click(function() {
