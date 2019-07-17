@@ -14,11 +14,20 @@ body {
 h1 {
   font-family: 'Bungee Shade', cursive;
   color: #ff00a8;
-  text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
+  text-shadow: 0 0 20px #3600ff, 0 0 1px #ffffff, 0 0 10px #001eff, 0 0 10px #1200ff;
+}
+
+/* aligns items in center */
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: 'Bungee Shade', cursive;
   background-color: #211531;
   color: #ff00a8;
@@ -33,21 +42,23 @@ h1 {
   box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 50px #1200ff;
 }
 
-.vertical-center {
-  min-height: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .blue-shadow-hover:hover {
   text-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
   cursor: pointer;
 }
 
+/* Main menu */
+
+
+
 /* Game view */
 
+/* Temp styling for testing */
+.highlight {
+  background: black;
+}
+
+/* Symbol set styling */
 .symbol-set {
   max-width: 500px;
   margin: 20px auto;
@@ -56,12 +67,6 @@ h1 {
 .symbol {
   width: 80px;
   cursor: pointer;
-}
-
-/* Temp styling for testing */
-
-.highlight {
-  background: black;
 }
 
 .top-row {

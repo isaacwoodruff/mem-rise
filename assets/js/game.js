@@ -70,16 +70,18 @@ function newGame() {
 
 /*  
     Changes the score to match the counter (game.count), adds 1 onto counter and
-    checks to see if the continue button is visible (or does NOT have the class 
-    'd-none'), if this is true it adds a click event listener to the button. If
-    clicked it hides itself and generates a new move, generateMove(). If the button is not visible,
-    which means its at the start of a new game, it calls a function that generates
-    a new move, generateMove()
+    checks to see if the continue button is hidden (or has the class 'd-none'),
+    if the button is not visible, which means its at the start of a new game,
+    it calls a function that generates a new move, generateMove()
 */
 function addCount() {
     $('#scoreNumber').html(game.count);
     game.count++;
     
+    /*
+        Checks if the continue button is hidden (d-none), if it is that means it's
+        the start of a new game
+    */
     if($('.continue-btn').hasClass('d-none')){
         generateMove();
     }
@@ -179,7 +181,7 @@ function checkPlayerSelection() {
     }
 }
 
-// When the continue button is clicked it will hide itself and continue to the next move
+// When the continue button is clicked it will hide itself and continue to generate a move
 $('.continue-btn').click(function() {
     $('.continue-btn').addClass('d-none');
     generateMove();
@@ -193,4 +195,26 @@ $('.ready-btn').click(function() {
         $('#game-view-text').text("");
         newGame();
     }, 1000);
+});
+
+/*
+    This uses the textillate.js plugin along with animate.css and lettering.js libraries
+    to create a flashing text animation
+*/
+$('.text-flash').textillate({
+    in: {
+        effect: 'flash',
+        //shuffle: true,
+        //sync: true,
+        delayScale: 2,
+        delay: 50,
+    },
+    out: {
+        effect: 'flash',
+        //shuffle: true,
+        //sync: true,
+        delayScale: 2,
+        delay: 50
+    },
+    loop: true
 });
