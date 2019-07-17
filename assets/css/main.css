@@ -3,6 +3,7 @@
 body {
   text-align: center;
   font-family: 'Audiowide', cursive;
+  color: #fff;
   background-image: url("../images/sun.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,6 +13,24 @@ body {
 
 h1 {
   font-family: 'Bungee Inline', cursive;
+  color: #ff00a8;
+  text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
+}
+
+.btn {
+  border-radius: 5px;
+  font-family: 'Bungee Inline', cursive;
+  background-color: #211531;
+  color: #ff00a8;
+  text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
+  box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
+  font-size: 2em;
+}
+
+.btn:hover {
+  background-color: #211531;
+  color: #fff;
+  box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 50px #1200ff;
 }
 
 .vertical-center {
@@ -22,8 +41,8 @@ h1 {
   justify-content: center;
 }
 
-.white-on-hover:hover {
-  color: #FFF;
+.blue-shadow-hover:hover {
+  text-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
   cursor: pointer;
 }
 
