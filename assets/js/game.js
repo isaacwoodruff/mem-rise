@@ -155,16 +155,16 @@ playerClickListener();
 /*
     This checks the players selection (game.player) against the current game
     selection (game.currentGame). If the length of both is the same, then it 
-    compares the values within the two arrays. If they are the same it calls
-    the function addCount() to start the next move. If the values are not
-    the same then it ends the current game by calling the function newGame()
-    which resets the game.currentGame array
+    compares the values within the two arrays. If they are the same, it shows
+    the continue button which once clicked will start the next move. If the 
+    values are not the same then it ends the current game by calling the 
+    function newGame() which resets the game.currentGame array
 */
 function checkPlayerSelection() {
     if (game.player.length == game.currentGame.length) {
         if (game.player.toString() === game.currentGame.toString()) {
             console.log('checkPlayerSelection is True')
-            addCount();
+            $('.continue-btn').removeClass('d-none');
         }else {
             console.log('checkPlayerSelection is false')
             newGame();
@@ -172,6 +172,15 @@ function checkPlayerSelection() {
     }
 }
 
+// When the continue button is clicked it will hide itself and continue to the next move
+$('.continue-btn').click(function() {
+    $('.continue-btn').addClass('d-none');
+    setTimeout(function(){
+        addCount();
+    }, 500)
+});
+
+// When the ready button is clicked it will hide itself and start a new game
 $('.ready-btn').click(function() {
     $('#game-view-text').text("Let's go!");
     $('.ready-btn').addClass('d-none');
