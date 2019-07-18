@@ -40,9 +40,28 @@ h1 {
   cursor: pointer;
 }
 
-/* Main menu */
+.position-absolute-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
 
+.z-index-2 {
+  position: relative;
+  z-index: 2;
+}
 
+.back-and-menu-icons {
+  display: flex;
+}
+
+/* Menu list */
+
+.menu-list {
+  top: 30%;
+}
 
 /* Game view */
 

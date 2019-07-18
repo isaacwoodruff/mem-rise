@@ -11,28 +11,24 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee+Shade&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" />
     <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
 
     <title>Mem'rise</title>
 </head>
 
 <body>
-    <header>
+    <header class="z-index-2">
         <div class="difficulty">
-            
-        </div>
-        <div class="score mt-5 d-none">
-            <h2>Score</h2>
-            <h2 id="scoreNumber">0</h2>
+
         </div>
 
-        <div class="back-and-menu-icons d-none">
+        <div class="back-and-menu-icons justify-content-between d-none">
             <i class="fas fa-arrow-left fa-2x blue-shadow-hover"></i>
             <i class="fas fa-bars fa-2x blue-shadow-hover"></i>
         </div>
     </header>
-    <section class="main-menu">
+    <section class="main-menu position-absolute-center">
         <div class="vertical-wrapper">
             <h1 class="my-5 text-flash">Mem'rise</h1>
 
@@ -44,21 +40,21 @@
             <h2 class="mt-5">Leaderboard</h2>
             <div class="leaderboard-player-score d-inline-block">
                 <div class="text-left d-flex">
-                <ol class="mr-5">
-                    <li>Fernando</li>
-                    <li>Jeofrey</li>
-                    <li>Matilda</li>
-                </ol>
-                <ul class="list-unstyled">
-                    <li>78</li>
-                    <li>65</li>
-                    <li>32</li>
-                </ul>
+                    <ol class="mr-5">
+                        <li>Fernando</li>
+                        <li>Jeofrey</li>
+                        <li>Matilda</li>
+                    </ol>
+                    <ul class="list-unstyled">
+                        <li>78</li>
+                        <li>65</li>
+                        <li>32</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    <section class="help-menu d-none">
+    <section class="help-menu d-none position-absolute-center">
         <div class="vertical-wrapper">
             <h1>How To Play</h1>
 
@@ -69,7 +65,7 @@
             <p>Press the back arrow to return to the game.</p>
         </div>
     </section>
-    <section class="menu-list d-none">
+    <section class="menu-list d-none position-absolute-center">
         <div class="vertical-wrapper d-block">
             <ul>
                 <li class="main-menu-link blue-shadow-hover d-inline">Main Menu</li>
@@ -79,8 +75,12 @@
             </ul>
         </div>
     </section>
-    <section class="game-view d-none">
+    <section class="game-view d-none position-absolute-center">
         <div class="vertical-wrapper">
+            <div class="score d-none">
+                <h2>Score</h2>
+                <h2 id="scoreNumber">0</h2>
+            </div>
             <div class="symbol-set">
                 <div class="top-row">
                     <img id="blue" class="symbol" src="assets/images/blue-symbol.svg"></img>
@@ -94,11 +94,11 @@
                     <img id="purple" class="symbol ml-4" src="assets/images/purple-symbol.svg"></img>
                 </div>
             </div>
+
+            <p id="game-view-text">Click Ready To Begin</p>
+            <button class="ready-btn btn">Ready</button>
+            <button class="continue-btn btn d-none">Continue</button>
         </div>
-        
-        <p id="game-view-text">Click Ready To Begin</p>
-        <button class="ready-btn btn">Ready</button>
-        <button class="continue-btn btn d-none">Continue</button>
     </section>
 
     <!-- scripts -->
