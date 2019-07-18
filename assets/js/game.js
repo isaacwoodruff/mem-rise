@@ -1,27 +1,27 @@
 // Navigation
 
 // When Start button is clicked it hides the main menu, then shows the game view and back/menu icons
-$('.start-btn').click(function() {
-    $('.main-menu').addClass('d-none');
-    $('.game-view, .back-and-menu-icons, .score').removeClass('d-none');
+$('#start-btn').click(function() {
+    $('#main-menu').addClass('d-none');
+    $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
 });
 
-// When How To Play/ Help link is clicked it hides the main menu, menu list, then game view and shows the help menu
+// When How To Play/ Help menu link is clicked it hides the main menu, menu list, then game view and shows the help menu
 $('.help-menu-link').click(function() {
-    $('.main-menu, .menu-list, .game-view, .score').addClass('d-none');
-    $('.help-menu, .back-and-menu-icons').removeClass('d-none');
+    $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
+    $('#help-menu, #back-and-menu-icons').removeClass('d-none');
 });
 
 // When the Main Menu link is clicked in the menu list it hides the menu list and back/menu icons, then shows the main menu
-$('.main-menu-link').click(function() {
-    $('.menu-list, .back-and-menu-icons, .score').addClass('d-none');
-    $('.main-menu').removeClass('d-none');
+$('#main-menu-link').click(function() {
+    $('#menu-list, #back-and-menu-icons, #score').addClass('d-none');
+    $('#main-menu').removeClass('d-none');
 });
 
 // When the 3 stacked bars icon is clicked it hides the help menu and game view, then shows the menu list
-$('.fa-bars').click(function() {
-    $('.help-menu, .game-view, .score').addClass('d-none');
-    $('.back-and-menu-icons, .menu-list').removeClass('d-none');
+$('#menu-icon').click(function() {
+    $('#help-menu, #game-view, #score').addClass('d-none');
+    $('#back-and-menu-icons, #menu-list').removeClass('d-none');
 });
 
 /*
@@ -29,27 +29,27 @@ $('.fa-bars').click(function() {
     if game view is not the current window it hides help menu, menu list and main menu, then shows game view
     else it hides the game view, back/menu icons, then shows main menu
 */
-$('.fa-arrow-left').click(function() {
-    if (!$('.game-view').hasClass('d-none')) {
-        $('.game-view, .back-and-menu-icons, .score').addClass('d-none');
-        $('.main-menu').removeClass('d-none');
+$('#back-arrow').click(function() {
+    if (!$('#game-view').hasClass('d-none')) {
+        $('#game-view, #back-and-menu-icons, #score').addClass('d-none');
+        $('#main-menu').removeClass('d-none');
     }
     else {
-        $('.main-menu, .menu-list, .help-menu').addClass('d-none');
-        $('.game-view, .back-and-menu-icons, .score').removeClass('d-none');
+        $('#main-menu, #menu-list, #help-menu').addClass('d-none');
+        $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
     }
 });
 
 // When the continue button is clicked it will hide itself and continue to generate a move
-$('.continue-btn').click(function() {
-    $('.continue-btn').addClass('d-none');
+$('#continue-btn').click(function() {
+    $('#continue-btn').addClass('d-none');
     generateMove();
 });
 
 // When the ready button is clicked it will hide itself and start a new game
-$('.ready-btn').click(function() {
+$('#ready-btn').click(function() {
     $('#game-view-text').text("Let's go!");
-    $('.ready-btn').addClass('d-none');
+    $('#ready-btn').addClass('d-none');
     setTimeout(function(){
         $('#game-view-text').text("");
         newGame();
@@ -112,7 +112,7 @@ function addCount() {
     
     
     // If continue button is hidden that means it's the start of a new game
-    if($('.continue-btn').hasClass('d-none')){
+    if($('#continue-btn').hasClass('d-none')){
         generateMove();
     }
 }
@@ -202,11 +202,11 @@ function checkPlayerSelection() {
         }
         
         if (game.player.toString() === game.currentGame.toString()) {
-            $('.continue-btn').removeClass('d-none');
+            $('#continue-btn').removeClass('d-none');
             addCount();
         }else {
             $('#game-view-text').text("Wrong move! Try again");
-            $('.ready-btn').removeClass('d-none');
+            $('#ready-btn').removeClass('d-none');
         }
     }
 }

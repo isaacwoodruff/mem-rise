@@ -19,22 +19,22 @@
 
 <body>
     <header class="z-index-2">
-        <div class="back-and-menu-icons justify-content-between d-none">
-            <i class="fas fa-arrow-left fa-2x blue-shadow-hover"></i>
-            <i class="fas fa-bars fa-2x blue-shadow-hover"></i>
+        <div id="back-and-menu-icons" class="justify-content-between d-none">
+            <i id="back-arrow" class="fas fa-arrow-left fa-2x blue-shadow-hover"></i>
+            <i id="menu-icon" class="fas fa-bars fa-2x blue-shadow-hover"></i>
         </div>
     </header>
-    <section class="main-menu position-absolute-center">
+    <section id="main-menu" class="position-absolute-center">
         <div class="vertical-wrapper">
             <h1 class="my-5 text-flash">Mem'rise</h1>
 
-            <button class="start-btn btn my-5">Start</button>
+            <button id="start-btn" class="btn my-5">Start</button>
             <div class="d-block">
                 <h3 class="help-menu-link blue-shadow-hover d-inline">How to play?</h3>
             </div>
 
             <h2 class="mt-5">Leaderboard</h2>
-            <div class="leaderboard-player-score d-inline-block">
+            <div id="leaderboard-player-score" class="d-inline-block">
                 <div class="text-left d-flex">
                     <ol class="mr-5">
                         <li>Fernando</li>
@@ -50,7 +50,7 @@
             </div>
         </div>
     </section>
-    <section class="help-menu d-none position-absolute-center">
+    <section id="help-menu" class="d-none position-absolute-center">
         <div class="vertical-wrapper">
             <h1>How To Play</h1>
 
@@ -61,23 +61,23 @@
             <p>Press the back arrow to return to the game.</p>
         </div>
     </section>
-    <section class="menu-list d-none position-absolute-center">
+    <section id="menu-list" class="d-none position-absolute-center">
         <div class="vertical-wrapper d-block">
             <ul>
-                <li class="main-menu-link blue-shadow-hover d-inline">Main Menu</li>
+                <li id="main-menu-link" class="blue-shadow-hover d-inline">Main Menu</li>
                 <li>Leaderboard</li>
                 <li>Contact</li>
                 <li class="help-menu-link blue-shadow-hover d-inline">Help</li>
             </ul>
         </div>
     </section>
-    <section class="game-view d-none position-absolute-center">
+    <section id="game-view" class="d-none position-absolute-center">
         <div class="vertical-wrapper">
-            <div class="score d-none">
+            <div id="score" class="d-none">
                 <h2>Score</h2>
                 <h2 id="scoreNumber">0</h2>
             </div>
-            <div class="symbol-set">
+            <div id="symbol-set">
                 <div class="top-row">
                     <img id="blue" class="symbol" src="assets/images/blue-symbol.svg"></img>
                 </div>
@@ -92,8 +92,8 @@
             </div>
 
             <p id="game-view-text">Click Ready To Begin</p>
-            <button class="ready-btn btn">Ready</button>
-            <button class="continue-btn btn d-none">Continue</button>
+            <button id="ready-btn" class="btn">Ready</button>
+            <button id="continue-btn" class="btn d-none">Continue</button>
         </div>
     </section>
 

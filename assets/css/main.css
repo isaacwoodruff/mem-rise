@@ -53,13 +53,13 @@ h1 {
   z-index: 2;
 }
 
-.back-and-menu-icons {
+#back-and-menu-icons {
   display: flex;
 }
 
 /* Menu list */
 
-.menu-list {
+#menu-list {
   top: 30%;
 }
 
@@ -72,7 +72,7 @@ h1 {
 }
 
 /* Symbol set styling */
-.symbol-set {
+#symbol-set {
   max-width: 500px;
   margin: 20px auto;
 }
