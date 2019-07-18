@@ -157,7 +157,7 @@ function highlightSelections() {
             addSymbolAnimations(game.currentGame[i]);
             setTimeout(function() {
                 removeSymbolAnimations(game.currentGame[i]);
-            }, 1000);
+            }, 700);
             /*
                 When variable i is equal to anything besides 0 the outer setTimeout method will
                 multiply i by 1000. This will show the currentGame values 1 second after each other.
@@ -169,8 +169,8 @@ function highlightSelections() {
                 addSymbolAnimations(game.currentGame[i]);
                 setTimeout(function() {
                     removeSymbolAnimations(game.currentGame[i]);
-                }, 1000);
-            }, i * 1120);
+                }, 700);
+            }, i * 1000);
         }
     }
     resetPlayer();
