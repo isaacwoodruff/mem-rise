@@ -3,6 +3,7 @@
 body {
   height: 100vh;
   max-height: 100vh;
+  overflow: hidden;
   text-align: center;
   font-family: 'Audiowide', cursive;
   color: #fff;
@@ -48,19 +49,33 @@ h1 {
   z-index: 0;
 }
 
-.z-index-2 {
+/* Header */
+
+header {
   position: relative;
+  top: 5%;
   z-index: 2;
 }
 
 #back-and-menu-icons {
   display: flex;
+  margin: 0 30px;
+}
+
+/* Help menu */
+
+#help-menu {
+  width: 80%;
+  max-width: 400px;
+  margin: 200px auto;
 }
 
 /* Menu list */
 
 #menu-list {
   top: 30%;
+  max-width: 200px;
+  margin: auto;
 }
 
 /* Game view */
@@ -99,4 +114,21 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 40px;
+}
+
+
+@media only screen and (min-width: 750px){
+  header {
+    top: 40%;
+    margin: 0 15%;
+  }
+}
+
+@media only screen and (min-width: 950px){
+  header {
+    position: absolute;
+    top: 40%;
+    width: 70%;
+    margin: 0 15%;
+  }
 }
