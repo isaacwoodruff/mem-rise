@@ -1,9 +1,3 @@
-// Global Variables
-
-// Variable for playerClickListener functions
-let symbolSetArrayValue;
-
-
 // Navigation
 
 // When Start button is clicked it hides the main menu, then shows the game view and back/menu icons
@@ -72,15 +66,11 @@ $('.ready-btn').click(function() {
 $('.text-flash').textillate({
     in: {
         effect: 'flash',
-        //shuffle: true,
-        //sync: true,
         delayScale: 2,
         delay: 50,
     },
     out: {
         effect: 'flash',
-        //shuffle: true,
-        //sync: true,
         delayScale: 2,
         delay: 50
     },
@@ -103,11 +93,6 @@ var game = {
     count: 0
 };
 
-/* 
-    This function highlights the symbol/currentGame value so the user can see
-    which image they have to click
-*/
-
 // Resets all of the currentGame, player, and count to 0 or empty, then calls the counter function (addCount())
 function newGame() {
     game.currentGame = [];
@@ -125,10 +110,8 @@ function addCount() {
     $('#scoreNumber').html(game.count);
     game.count++;
     
-    /*
-        Checks if the continue button is hidden (d-none), if it is that means it's
-        the start of a new game
-    */
+    
+    // If continue button is hidden that means it's the start of a new game
     if($('.continue-btn').hasClass('d-none')){
         generateMove();
     }
@@ -146,15 +129,10 @@ function generateMove() {
 /*
     This function highlights the values in the game.currentGame array by adding a CSS class.
     The class is then removed after a short amount of time and moves onto the next value in
-    the array. It loops through each value in game.currentGame and passes the value to the
-    function timer(i). The function resetPlayer is called at the end of the selections.
+    the array.
 */
 function highlightSelections() {
     for (let i = 0; i < game.currentGame.length; i++) {
-        timer(i);
-    }
-
-    function timer(i) {
         /*
             If i is equal to 0 this instantly highlights the first currentGame value.
             It adds and removes the animation for the symbols selected
@@ -164,13 +142,12 @@ function highlightSelections() {
             setTimeout(function() {
                 removeSymbolAnimations(game.currentGame[i]);
             }, 700);
-            /*
-                When variable i is equal to anything besides 0 the outer setTimeout method will
-                multiply i by 1000. This will show the currentGame values 1 second after each other.
-                It adds and removes the animation for the symbols selected
-            */
-        }
-        else {
+        /*
+            When variable i is equal to anything besides 0 the outer setTimeout method will
+            multiply i by 1000. This will show the currentGame values 1 second after each other.
+            It adds and removes the animation for the symbols selected
+        */
+        }else {
             setTimeout(function() {
                 addSymbolAnimations(game.currentGame[i]);
                 setTimeout(function() {
@@ -179,26 +156,18 @@ function highlightSelections() {
             }, i * 1000);
         }
     }
-    resetPlayer();
+    resetPreviousPlayerSelection();
 }
 
 /*
-    Resets game.player so that when the highlightSelection function has displayed all
-    of the selected values in game.currentGame, it resets the users previous selections
-    in game.player to allow the user to start the new selections. It then calls a function
-    which adds a click event listener to the symbols
+    Resets game.player, then adds a click event listener for each value in the 
+    game.symbolsArray, then when a user clicks on a game symbol it pushes the
+    ID of said symbol to the game.player array. It also adds an animation so the
+    player knows they've clicked a symbol
 */
-function resetPlayer() {
+function resetPreviousPlayerSelection() {
     game.player = [];
-    addPlayerClickListener();
-}
-
-/*
-    Adds a click event listener for each value in the game.symbolsArray, then when a user
-    clicks on a game symbol it pushes the ID of said symbol to the game.player array
-    It also adds an animation so the player knows they've clicked a symbol
-*/
-function addPlayerClickListener(){
+    
     for (let i = 0; i < game.symbolsArray.length; i++) {
         let symbolSetArrayValue = game.symbolsArray[i];
         
@@ -215,12 +184,30 @@ function addPlayerClickListener(){
     }
 }
 
-// Removes the click event listener for every symbol in the game.symbolsArray
-function removePlayerClickListener() {
-    for (let i = 0; i < game.symbolsArray.length; i++) {
-        let symbolSetArrayValue = game.symbolsArray[i];
+/*
+    This checks the players selection against the current game selection. 
+    If the length of both is the same, then it compares the values within 
+    the two arrays. If they are the same, it shows the continue button which
+    once clicked will start the next move. If the values are not the same
+    then it ends the current game by calling the function newGame()
+*/
+function checkPlayerSelection() {
+    if (game.player.length == game.currentGame.length) {
         
-        $(symbolSetArrayValue).unbind('click');
+        // Removes the click event listener for every symbol in the game.symbolsArray
+        for (let i = 0; i < game.symbolsArray.length; i++) {
+            let symbolSetArrayValue = game.symbolsArray[i];
+            
+            $(symbolSetArrayValue).unbind('click');
+        }
+        
+        if (game.player.toString() === game.currentGame.toString()) {
+            $('.continue-btn').removeClass('d-none');
+            addCount();
+        }else {
+            $('#game-view-text').text("Wrong move! Try again");
+            $('.ready-btn').removeClass('d-none');
+        }
     }
 }
 
@@ -236,27 +223,4 @@ function removeSymbolAnimations(symbolSetValue) {
     $(symbolSetValue).removeClass('highlight');
     $(symbolSetValue).removeClass('animated');
     $(symbolSetValue).removeClass('tada');
-}
-
-/*
-    This checks the players selection (game.player) against the current game
-    selection (game.currentGame). If the length of both is the same, then it 
-    compares the values within the two arrays. If they are the same, it shows
-    the continue button which once clicked will start the next move. If the 
-    values are not the same then it ends the current game by calling the 
-    function newGame() which resets the game.currentGame array
-*/
-function checkPlayerSelection() {
-    if (game.player.length == game.currentGame.length) {
-        removePlayerClickListener();
-        if (game.player.toString() === game.currentGame.toString()) {
-            console.log('checkPlayerSelection is True');
-            $('.continue-btn').removeClass('d-none');
-            addCount();
-        }else {
-            console.log('checkPlayerSelection is false');
-            $('#game-view-text').text("Wrong move! Try again");
-            $('.ready-btn').removeClass('d-none');
-        }
-    }
 }
