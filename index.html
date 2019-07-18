@@ -31,12 +31,14 @@
             <i class="fas fa-bars fa-2x blue-shadow-hover"></i>
         </div>
     </header>
-    <section class="main-menu vertical-center">
+    <section class="main-menu">
         <div class="vertical-wrapper">
             <h1 class="my-5 text-flash">Mem'rise</h1>
 
             <button class="start-btn btn my-5">Start</button>
-            <h3 class="help-menu-link blue-shadow-hover">How to play?</h3>
+            <div class="d-block">
+                <h3 class="help-menu-link blue-shadow-hover d-inline">How to play?</h3>
+            </div>
 
             <h2 class="mt-5">Leaderboard</h2>
             <div class="leaderboard-player-score d-inline-block">
@@ -55,7 +57,7 @@
             </div>
         </div>
     </section>
-    <section class="help-menu vertical-center d-none">
+    <section class="help-menu d-none">
         <div class="vertical-wrapper">
             <h1>How To Play</h1>
 
@@ -66,19 +68,19 @@
             <p>Press the back arrow to return to the game.</p>
         </div>
     </section>
-    <section class="menu-list vertical-center d-none">
-        <div class="vertical-wrapper">
+    <section class="menu-list d-none">
+        <div class="vertical-wrapper d-block">
             <ul>
-                <li class="main-menu-link blue-shadow-hover">Main Menu</li>
+                <li class="main-menu-link blue-shadow-hover d-inline">Main Menu</li>
                 <li>Leaderboard</li>
                 <li>Contact</li>
-                <li class="help-menu-link blue-shadow-hover">Help</li>
+                <li class="help-menu-link blue-shadow-hover d-inline">Help</li>
             </ul>
         </div>
     </section>
-    <section class="min-vh-100 game-view d-none">
-        <div class="vertical-wrapper row">
-            <div class="symbol-set col-12">
+    <section class="game-view d-none">
+        <div class="vertical-wrapper">
+            <div class="symbol-set">
                 <div class="top-row">
                     <img id="blue" class="symbol" src="assets/images/blue-symbol.svg"></img>
                 </div>
@@ -93,13 +95,9 @@
             </div>
         </div>
         
-        <div class="row mw-100">
-            <div class="col-12">
-                <p id="game-view-text">Click Ready To Begin</p>
-                <button class="ready-btn btn">Ready</button>
-                <button class="continue-btn btn d-none">Continue</button>
-            </div>
-        </div>
+        <p id="game-view-text">Click Ready To Begin</p>
+        <button class="ready-btn btn">Ready</button>
+        <button class="continue-btn btn d-none">Continue</button>
     </section>
 
     <!-- scripts -->
