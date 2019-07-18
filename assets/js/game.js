@@ -40,6 +40,23 @@ $('.fa-arrow-left').click(function() {
     }
 });
 
+// When the continue button is clicked it will hide itself and continue to generate a move
+$('.continue-btn').click(function() {
+    $('.continue-btn').addClass('d-none');
+    generateMove();
+});
+
+// When the ready button is clicked it will hide itself and start a new game
+$('.ready-btn').click(function() {
+    $('#game-view-text').text("Let's go!");
+    $('.ready-btn').addClass('d-none');
+    setTimeout(function(){
+        $('#game-view-text').text("");
+        newGame();
+    }, 1000);
+});
+
+
 // Text Animations
 
 /*
@@ -134,24 +151,24 @@ function highlightSelections() {
     function timer(i) {
         /*
             If i is equal to 0 this instantly highlights the first currentGame value.
-            Then it removes the highlight class after some time.
+            It adds and removes the animation for the symbols selected
         */
         if (i == 0) {
-            $(game.currentGame[i]).addClass('highlight');
+            addSymbolAnimations(game.currentGame[i]);
             setTimeout(function() {
-                $(game.currentGame[i]).removeClass('highlight');
+                removeSymbolAnimations(game.currentGame[i]);
             }, 1000);
             /*
                 When variable i is equal to anything besides 0 the outer setTimeout method will
                 multiply i by 1000. This will show the currentGame values 1 second after each other.
-                Then it removes the highlight class after some time.
+                It adds and removes the animation for the symbols selected
             */
         }
         else {
             setTimeout(function() {
-                $(game.currentGame[i]).addClass('highlight');
+                addSymbolAnimations(game.currentGame[i]);
                 setTimeout(function() {
-                    $(game.currentGame[i]).removeClass('highlight');
+                    removeSymbolAnimations(game.currentGame[i]);
                 }, 1000);
             }, i * 1120);
         }
@@ -171,15 +188,16 @@ function resetPlayer() {
 /*
     Adds a click event listener for each value in the game.symbolsArray, then when a user
     clicks on a game symbol it pushes the ID of said symbol to the game.player array
+    It also adds an animation so the player knows they've clicked a symbol
 */
 function playerClickListener() {
     for (let i = 0; i < game.symbolsArray.length; i++) {
         let symbolSetArrayValue = game.symbolsArray[i];
         $(symbolSetArrayValue).click(function() {
-            $(symbolSetArrayValue).addClass('highlight');
+            addSymbolAnimations(symbolSetArrayValue);
             setTimeout(function() {
-                $(symbolSetArrayValue).removeClass('highlight');
-            }, 100);
+                removeSymbolAnimations(symbolSetArrayValue);
+            }, 700);
             game.player.push(symbolSetArrayValue);
             checkPlayerSelection();
         });
@@ -210,18 +228,16 @@ function checkPlayerSelection() {
     }
 }
 
-// When the continue button is clicked it will hide itself and continue to generate a move
-$('.continue-btn').click(function() {
-    $('.continue-btn').addClass('d-none');
-    generateMove();
-});
+// Add classes highlight, animated, and tada which animated the symbols
+function addSymbolAnimations(symbolSetValue) {
+    $(symbolSetValue).addClass('highlight');
+    $(symbolSetValue).addClass('animated');
+    $(symbolSetValue).addClass('tada');
+}
 
-// When the ready button is clicked it will hide itself and start a new game
-$('.ready-btn').click(function() {
-    $('#game-view-text').text("Let's go!");
-    $('.ready-btn').addClass('d-none');
-    setTimeout(function(){
-        $('#game-view-text').text("");
-        newGame();
-    }, 1000);
-});
+// Remove classes highlight, animated, and tada which animated the symbols
+function removeSymbolAnimations(symbolSetValue) {
+    $(symbolSetValue).removeClass('highlight');
+    $(symbolSetValue).removeClass('animated');
+    $(symbolSetValue).removeClass('tada');
+}
