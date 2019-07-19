@@ -45,10 +45,10 @@ The developers goals were to:
 
 The wireframes were creating using [Figma](https://www.figma.com).
 
-- ##### Current Design
+- #### Current Design
     - [Desktop Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=29%3A61) 
     - [Mobile Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=28%3A0) 
 
-- ##### Old Design
+- #### Old Design
     - [Desktop Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=7%3A35) 
-    - [Mobile Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=7%3A35) 
+    - [Mobile Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=0%3A1) 
