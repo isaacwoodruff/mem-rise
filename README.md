@@ -39,3 +39,16 @@ The developers goals were to:
 - Gain a more intrinsic understanding of JavaScript, jQuery, and Jasmine.
 - Craft a project to a high standard.
 
+### User Stories
+
+### Wireframes
+
+The wireframes were creating using [Figma](https://www.figma.com).
+
+- ##### Current Design
+    - [Desktop Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=29%3A61) 
+    - [Mobile Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=28%3A0) 
+
+- ##### Old Design
+    - [Desktop Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=7%3A35) 
+    - [Mobile Display](https://www.figma.com/file/UKqdFUDGyTi9GC6PWotMWKl9/Mem'rise---Memory-Game?node-id=7%3A35) 
