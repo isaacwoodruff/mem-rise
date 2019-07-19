@@ -27,14 +27,16 @@ h1 {
   background-color: #211531;
   color: #ff00a8;
   text-shadow: 0 0 5px #3600ff, 0 0 1px #0012ff, 0 0 1px #001eff, 0 0 1px #1200ff;
-  box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
+  -webkit-box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
+          box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 10px #1200ff;
   font-size: 2em;
 }
 
 .btn:hover {
   background-color: #211531;
   color: #fff;
-  box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 50px #1200ff;
+  -webkit-box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 50px #1200ff;
+          box-shadow: 0 0 50px #3600ff, 0 0 10px #0012ff, 0 0 10px #001eff, 0 0 50px #1200ff;
 }
 
 .blue-shadow-hover:hover {
@@ -118,7 +120,8 @@ h1 {
 /* Highlight symbols */
 .highlight {
   border-radius: 100%;
-  box-shadow: inset 0 0 60px rgba(54, 0, 255, 0.5), 0 0 30px rgba(54, 0, 255, 0.5);
+  -webkit-box-shadow: inset 0 0 60px rgba(54, 0, 255, 0.5), 0 0 30px rgba(54, 0, 255, 0.5);
+          box-shadow: inset 0 0 60px rgba(54, 0, 255, 0.5), 0 0 30px rgba(54, 0, 255, 0.5);
 }
 
 /* Symbol set styling */
@@ -130,24 +133,38 @@ h1 {
 .symbol {
   width: 80px;
   cursor: pointer;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
 }
 
 .top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .middle-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 15px auto;
 }
 
 .bottom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 40px;
 }
 
