@@ -65,6 +65,12 @@ h1 {
   top: 5%;
 }
 
+/* Main menu */
+
+#leaderboard {
+  margin-top: 90px;
+}
+
 #back-arrow {
   margin-right: 80%;
 }
