@@ -2,34 +2,52 @@
 
 // When Start button is clicked it hides the main menu, then shows the game view and back/menu icons
 $('#start-btn').click(function() {
+    startButton();
+});
+
+function startButton(){
     $('#main-menu').addClass('d-none');
     $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
-});
+}
 
 // When How To Play/ Help menu link is clicked it hides the main menu, menu list, then game view and shows the help menu
 $('.help-menu-link').click(function() {
-    $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
-    $('#help-menu, #back-and-menu-icons, #background-overlay').removeClass('d-none');
+    helpMenuLinks();
 });
 
+function helpMenuLinks(){
+    $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
+    $('#help-menu, #back-and-menu-icons, #background-overlay').removeClass('d-none');
+}
 // When the Main Menu link is clicked in the menu list it hides the menu list and back/menu icons, then shows the main menu
 $('#main-menu-link').click(function() {
+    mainMenuLinks();
+});
+
+function mainMenuLinks() {
     $('#menu-list, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
     $('#main-menu').removeClass('d-none');
-});
+}
 
 // When the 3 stacked bars icon is clicked it hides the help menu and game view, then shows the menu list
 $('#menu-icon').click(function() {
-    $('#help-menu, #game-view, #score').addClass('d-none');
-    $('#back-and-menu-icons, #menu-list, #background-overlay').removeClass('d-none');
+    menuIcon();
 });
 
+function menuIcon(){
+    $('#help-menu, #game-view, #score').addClass('d-none');
+    $('#back-and-menu-icons, #menu-list, #background-overlay').removeClass('d-none');
+}
 /*
     When back arrow icon is clicked
     if game view is not the current window it hides help menu, menu list and main menu, then shows game view
     else it hides the game view, back/menu icons, then shows main menu
 */
 $('#back-arrow').click(function() {
+    backArrow();
+});
+
+function backArrow(){
     if (!$('#game-view').hasClass('d-none')) {
         $('#game-view, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
         $('#main-menu').removeClass('d-none');
@@ -38,25 +56,32 @@ $('#back-arrow').click(function() {
         $('#main-menu, #menu-list, #help-menu, #background-overlay').addClass('d-none');
         $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
     }
-});
+}
 
 // When the continue button is clicked it will hide itself and continue to generate a move
 $('#continue-btn').click(function() {
+    continueButton();
+});
+
+function continueButton(){
     $('#game-view-text').text("");
     $('#continue-btn').addClass('d-none');
     generateMove();
-});
+}
 
 // When the ready button is clicked it will hide itself and start a new game
 $('#ready-btn').click(function() {
+    readyButton();
+});
+
+function readyButton(){
     $('#game-view-text').text("Let's go!");
     $('#ready-btn').addClass('d-none');
     setTimeout(function(){
         $('#game-view-text').text("");
         newGame();
     }, 1000);
-});
-
+}
 
 // Text Animations
 
