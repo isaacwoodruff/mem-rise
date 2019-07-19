@@ -14,7 +14,7 @@ describe('Navigation buttons', function(){
             <div id="back-and-menu-icons"><div>
             <div id="score"><div>
             <div id="background-overlay"><div>
-            <div id="#game-view-text"><div>
+            <div id="game-view-text"><div>
             
         `);
     });
@@ -176,4 +176,34 @@ describe('Navigation buttons', function(){
         });
     });
     
+    describe('When the ready button is clicked',function(){
+        beforeEach(function() {
+            jasmine.clock().install();
+        });
+
+        afterEach(function() {
+            jasmine.clock().uninstall();
+        });
+        it(`Replaces the #game-view-text with "Let's go!"`, function(){
+            readyButton();
+            jasmine.clock().tick(100);
+            expect($('#game-view-text').text()).toMatch("Let's go!");
+        });
+        it(`Replaces the #game-view-text with an empty string after 1 second`, function(){
+            readyButton();
+            jasmine.clock().tick(1000);
+            expect($('#game-view-text').text()).toMatch("");
+        });
+        it('Hides the #ready-btn', function(){
+            readyButton();
+            expect($('#ready-btn')).toHaveClass('d-none');
+        });
+        it('Calls the newGame() function after 1 second', function(){
+            spyOn(window,"newGame");
+            readyButton();
+            jasmine.clock().tick(1000);
+            expect($('#game-view-text').text()).toMatch("");
+            expect(window.newGame).toHaveBeenCalled();
+        });
+    });
 });
