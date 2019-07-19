@@ -21,10 +21,10 @@ function helpMenuLinks(){
 }
 // When the Main Menu link is clicked in the menu list it hides the menu list and back/menu icons, then shows the main menu
 $('#main-menu-link').click(function() {
-    mainMenuLinks();
+    mainMenuLink();
 });
 
-function mainMenuLinks() {
+function mainMenuLink() {
     $('#menu-list, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
     $('#main-menu').removeClass('d-none');
 }
@@ -51,8 +51,7 @@ function backArrow(){
     if (!$('#game-view').hasClass('d-none')) {
         $('#game-view, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
         $('#main-menu').removeClass('d-none');
-    }
-    else {
+    }else {
         $('#main-menu, #menu-list, #help-menu, #background-overlay').addClass('d-none');
         $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
     }
