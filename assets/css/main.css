@@ -12,7 +12,7 @@ body {
   /*background-size: cover;
   background-position: center center;*/
   background-position-x: center;
-  background-color: #282c5b;
+  background-color: #111427;
 }
 
 h1 {
@@ -147,6 +147,10 @@ h1 {
 
 
 @media only screen and (max-width: 402px){
+  .middle-row {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
   #help-menu {
     margin: 120px auto;
   }
