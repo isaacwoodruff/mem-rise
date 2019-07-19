@@ -19,11 +19,12 @@
 
 <body>
     <header>
-        <div id="back-and-menu-icons" class="justify-content-between d-none">
-            <i id="back-arrow" class="fas fa-arrow-left fa-2x blue-shadow-hover"></i>
-            <i id="menu-icon" class="fas fa-bars fa-2x blue-shadow-hover"></i>
+        <div id="back-and-menu-icons" class="d-none">
+            <i id="back-arrow" class="fas fa-arrow-left fa-2x blue-shadow-hover z-index-2"></i>
+            <i id="menu-icon" class="fas fa-bars fa-2x blue-shadow-hover z-index-2"></i>
         </div>
     </header>
+    <div id="background-overlay" class="d-none"></div>
     <section id="main-menu" class="position-absolute-center">
         <div class="vertical-wrapper">
             <h1 class="my-5 text-flash">Mem'rise</h1>
@@ -88,8 +89,8 @@
                     <img id="purple" class="symbol ml-4" src="assets/images/purple-symbol.svg"></img>
                 </div>
             </div>
-
-            <p id="game-view-text">Click Ready To Begin</p>
+            
+            <p id="game-view-text" class="position-absolute-center">Click Ready<br>To Begin</p>
             <button id="ready-btn" class="btn">Ready</button>
             <button id="continue-btn" class="btn d-none">Continue</button>
         </div>

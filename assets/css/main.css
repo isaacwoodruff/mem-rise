@@ -9,8 +9,9 @@ body {
   color: #fff;
   background-image: url("../images/sun.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  /*background-size: cover;
+  background-position: center center;*/
+  background-position-x: center;
   background-color: #282c5b;
 }
 
@@ -49,17 +50,23 @@ h1 {
   z-index: 0;
 }
 
-/* Header */
-
-header {
+.z-index-2 {
   position: relative;
-  top: 5%;
   z-index: 2;
 }
 
+/* Header */
+
 #back-and-menu-icons {
-  display: flex;
-  margin: 0 30px;
+  display: inline;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5%;
+}
+
+#back-arrow {
+  margin-right: 80%;
 }
 
 /* Help menu */
@@ -70,15 +77,37 @@ header {
   margin: 200px auto;
 }
 
+
+#background-overlay {
+  position: absolute;
+  min-width: 420px;
+  z-index: -1;
+  height: 569px;
+  left: 0;
+  right: 0;
+  top: 70px;
+  background: rgba(204, 0, 255, 0.22);
+  border: 26px solid rgba(0, 102, 255, 0.05);
+  border-radius: 50% 50% 0px 5px;
+}
+
 /* Menu list */
 
 #menu-list {
-  top: 30%;
+  top: 40%;
   max-width: 200px;
   margin: auto;
 }
 
 /* Game view */
+
+#game-view {
+  margin-top: 20px;
+}
+
+#game-view-text {
+  top: 260px;
+}
 
 /* Highlight symbols */
 .highlight {
@@ -89,7 +118,7 @@ header {
 /* Symbol set styling */
 #symbol-set {
   max-width: 500px;
-  margin: 20px auto;
+  margin: 50px auto;
 }
 
 .symbol {
@@ -117,18 +146,35 @@ header {
 }
 
 
-@media only screen and (min-width: 750px){
-  header {
-    top: 40%;
-    margin: 0 15%;
+@media only screen and (max-width: 402px){
+  #help-menu {
+    margin: 120px auto;
   }
 }
 
-@media only screen and (min-width: 950px){
-  header {
-    position: absolute;
-    top: 40%;
-    width: 70%;
-    margin: 0 15%;
+@media only screen and (max-width: 440px){
+  #background-overlay {
+    border: none;
+    border-radius: 0;
+    top: 0;
+    height: 100vh;
+  }
+  #back-arrow {
+    margin-right: 60%;
+  }
+}
+
+@media only screen and (min-width: 750px){
+  #back-and-menu-icons {
+    top: 325px;
+  }
+  #back-arrow {
+    margin-right: 450px;
+  }
+  #background-overlay {
+    width: 550px;
+    height: 550px;
+    margin: auto;
+    border-radius: 100%;
   }
 }

@@ -9,19 +9,19 @@ $('#start-btn').click(function() {
 // When How To Play/ Help menu link is clicked it hides the main menu, menu list, then game view and shows the help menu
 $('.help-menu-link').click(function() {
     $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
-    $('#help-menu, #back-and-menu-icons').removeClass('d-none');
+    $('#help-menu, #back-and-menu-icons, #background-overlay').removeClass('d-none');
 });
 
 // When the Main Menu link is clicked in the menu list it hides the menu list and back/menu icons, then shows the main menu
 $('#main-menu-link').click(function() {
-    $('#menu-list, #back-and-menu-icons, #score').addClass('d-none');
+    $('#menu-list, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
     $('#main-menu').removeClass('d-none');
 });
 
 // When the 3 stacked bars icon is clicked it hides the help menu and game view, then shows the menu list
 $('#menu-icon').click(function() {
     $('#help-menu, #game-view, #score').addClass('d-none');
-    $('#back-and-menu-icons, #menu-list').removeClass('d-none');
+    $('#back-and-menu-icons, #menu-list, #background-overlay').removeClass('d-none');
 });
 
 /*
@@ -31,17 +31,18 @@ $('#menu-icon').click(function() {
 */
 $('#back-arrow').click(function() {
     if (!$('#game-view').hasClass('d-none')) {
-        $('#game-view, #back-and-menu-icons, #score').addClass('d-none');
+        $('#game-view, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
         $('#main-menu').removeClass('d-none');
     }
     else {
-        $('#main-menu, #menu-list, #help-menu').addClass('d-none');
+        $('#main-menu, #menu-list, #help-menu, #background-overlay').addClass('d-none');
         $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
     }
 });
 
 // When the continue button is clicked it will hide itself and continue to generate a move
 $('#continue-btn').click(function() {
+    $('#game-view-text').text("");
     $('#continue-btn').addClass('d-none');
     generateMove();
 });
@@ -201,11 +202,14 @@ function checkPlayerSelection() {
             $(symbolSetArrayValue).unbind('click');
         }
         
+        let congratsMessages = ['Well done!','Good job!','You got this!','Nice!'];
+        
         if (game.player.toString() === game.currentGame.toString()) {
+            $('#game-view-text').text(congratsMessages[Math.floor(Math.random() * congratsMessages.length)]);
             $('#continue-btn').removeClass('d-none');
             addCount();
         }else {
-            $('#game-view-text').text("Wrong move! Try again");
+            $('#game-view-text').replaceWith('<p id="game-view-text" class="position-absolute-center">Wrong move! <br> Try again</p>');
             $('#ready-btn').removeClass('d-none');
         }
     }
