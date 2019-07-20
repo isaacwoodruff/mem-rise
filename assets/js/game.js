@@ -118,7 +118,7 @@ var game = {
     count: 0
 };
 
-// Resets all of the currentGame, player, and count to 0 or empty, then calls the counter function (addCount())
+// Resets all of the currentGame, player, and count to 0, then calls the counter function addCount()
 function newGame() {
     game.currentGame = [];
     game.count = 0;
@@ -132,7 +132,7 @@ function newGame() {
     it calls a function that generates a new move, generateMove()
 */
 function addCount() {
-    $('#scoreNumber').html(game.count);
+    $('#score-number').text(game.count);
     game.count++;
     
     
