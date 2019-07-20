@@ -148,3 +148,30 @@ The project uses **JavaScript**, **CSS**, and **HTML** programming languages.
 - [Google Chrome - Dev Tools](https://www.google.com/chrome/)
     - The project used **Google Chrome - Dev Tools** to test responsiveness, to debug code by utilising breakpoints and the console, and to speed up the design process.
 
+## Deployment
+
+The AWS IDE, [Cloud9](https://aws.amazon.com/cloud9/) was used to develop the project. The version control system, [Git](https://git-scm.com) was used to commit and track changes. These commits were pushed to the hosting platform [GitHub](https://github.com/) which was used to store the repository, and to deploy the project on [GitHub Pages](https://pages.github.com/) for a live demo. The deployed site is automatically updated through the master branch when new commits are pushed to the repository.
+
+#### The project, [Mem'rise](https://isaacwoodruff.github.io/mem-rise/) was deployed to GitHub Pages according to these instructions:
+1. Log into GitHub
+2. From the repository list on the side bar to the left, select **isaacwoodruff/mem-rise**.
+2. From the menu under the repository name, select **Settings**.
+3. Scroll down to the **GitHub Pages** section.
+4. Under the **Source** heading click the drop-down menu and from the list select **Master Branch**.
+5. [Mem'rise](https://isaacwoodruff.github.io/mem-rise/) is now **deployed** on GitHub Pages.
+6. Return to the **Github Pages** section in the **Settings** tab to retrieve the link to the [deployed site](https://isaacwoodruff.github.io/mem-rise/).
+
+#### To run the project locally and create a clone, follow these instructions:
+1. Follow [this link](https://isaacwoodruff.github.io/mem-rise/) to the main page of the [isaacwoodruff/mem-rise](https://isaacwoodruff.github.io/mem-rise/) repository.
+2. On the right side of the page click the green **Clone or download** button.
+3. In the '**Clone with HTTPS**' section, copy the URL for the repository.
+4. Open **Git Bash**.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL that was copied in Step 3.
+
+    `git clone https://github.com/isaacwoodruff/littlemorganshostel.git`
+    
+7. Press **Enter**.
+
+Your local clone is now created. If you would like further documentation on cloning a repository, you can read [Cloning a repository](https://help.github.com/en/articles/cloning-a-repository).
+
