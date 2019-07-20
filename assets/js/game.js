@@ -197,16 +197,20 @@ function resetPreviousPlayerSelection() {
         let symbolSetArrayValue = game.symbolsArray[i];
         
         $(symbolSetArrayValue).click(function() {
-            addSymbolAnimations(symbolSetArrayValue);
-            
-            setTimeout(function() {
-                removeSymbolAnimations(symbolSetArrayValue);
-            }, 700);
-            
-            game.player.push(symbolSetArrayValue);
-            checkPlayerSelection();
+            playerSelection(symbolSetArrayValue);
         });
     }
+}
+
+function playerSelection(symbolSetArrayValue) {
+    addSymbolAnimations(symbolSetArrayValue);
+    
+    setTimeout(function() {
+        removeSymbolAnimations(symbolSetArrayValue);
+    }, 700);
+            
+    game.player.push(symbolSetArrayValue);
+    checkPlayerSelection();
 }
 
 /*

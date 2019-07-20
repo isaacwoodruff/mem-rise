@@ -214,9 +214,10 @@ describe("Game logic", function() {
         setFixtures(`
             <div id="continue-btn"><div>
             <div id="score-number"><div>
+            <div id="#blue"><div>
         `);
         
-        game.currentGame = ['#orange','green'];
+        game.currentGame = ['#orange','#green','#blue'];
         game.count = 8;
     });
     
@@ -284,6 +285,40 @@ describe("Game logic", function() {
             spyOn(window,'resetPreviousPlayerSelection');
             highlightSelections();
             expect(window.resetPreviousPlayerSelection).toHaveBeenCalled();
+        });
+    });
+    
+    describe('resetPreviousPlayerSelection function', function() {
+        it('should reset game.player array', function() {
+            game.player = ['#blue','#green'];
+            resetPreviousPlayerSelection();
+            expect(game.player).toEqual([]);
+        });
+    });
+    
+    describe('playerSelection function', function() {
+        it('should call addSymbolAnimations on the values in the game.symbolsArray on click', function() {
+            spyOn(window,'addSymbolAnimations');
+            playerSelection();
+            expect(window.addSymbolAnimations).toHaveBeenCalled();
+        });
+        it('should call removeSymbolAnimations on the values in the game.symbolsArray on click', function() {
+            jasmine.clock().install();
+            spyOn(window,'removeSymbolAnimations');
+            playerSelection();
+            jasmine.clock().tick(700);
+            expect(window.removeSymbolAnimations).toHaveBeenCalled();
+            jasmine.clock().uninstall();
+        });
+        it('should push the players selection to game.player', function() {
+            game.player = [];
+            playerSelection('#blue');
+            expect([game.player.toString()]).toContain("#blue");
+        });
+        it('should call the checkPlayerSelection function', function() {
+            spyOn(window,'checkPlayerSelection');
+            playerSelection();
+            expect(window.checkPlayerSelection).toHaveBeenCalled();
         });
     });
 });
