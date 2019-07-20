@@ -145,3 +145,6 @@ The project uses **JavaScript**, **CSS**, and **HTML** programming languages.
     - The project used **Pixlr** to add an overlay to the background image which darkened it.
 - [AutoPrefixer](https://autoprefixer.github.io/)
     - The project used **AutoPrefixer** to add prefixes in the CSS for cross-browser support.
+- [Google Chrome - Dev Tools](https://www.google.com/chrome/)
+    - The project used **Google Chrome - Dev Tools** to test responsiveness, to debug code by utilising breakpoints and the console, and to speed up the design process.
+
