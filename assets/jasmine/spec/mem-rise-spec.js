@@ -15,7 +15,6 @@ describe('Navigation buttons', function() {
             <div id="score"><div>
             <div id="background-overlay"><div>
             <div id="game-view-text"><div>
-            
         `);
     });
 
@@ -215,10 +214,10 @@ describe("Game logic", function() {
             <div id="continue-btn"><div>
             <div id="ready-btn"><div>
             <div id="score-number"><div>
-            <div id="#blue"><div>
+            <div id="blue"><div>
         `);
         
-        game.currentGame = ['#orange','#green','#blue'];
+        game.currentGame = ['#orange','#green','#purple'];
         game.count = 8;
     });
     
@@ -342,6 +341,36 @@ describe("Game logic", function() {
             game.currentGame = ['#blue','#green'];
             checkPlayerSelection();
             expect($('#ready-btn').hasClass('d-none')).toBe(false);
+        });
+    });
+    
+    describe('addSymbolAnimations function', function() {
+        it('should add the class highlight', function() {
+            addSymbolAnimations('#blue');
+            expect($('#blue').hasClass('highlight')).toBe(true);
+        });
+        it('should add the class animated', function() {
+            addSymbolAnimations('#blue');
+            expect($('#blue').hasClass('animated')).toBe(true);
+        });
+        it('should add the class tada', function() {
+            addSymbolAnimations('#blue');
+            expect($('#blue').hasClass('tada')).toBe(true);
+        });
+    });
+    
+    describe('removeSymbolAnimations function', function() {
+        it('should remove the class highlight', function() {
+            addSymbolAnimations('#blue');
+            expect(!$('#blue').hasClass('highlight')).toBe(false);
+        });
+        it('should remove the class animated', function() {
+            addSymbolAnimations('#blue');
+            expect(!$('#blue').hasClass('animated')).toBe(false);
+        });
+        it('should remove the class tada', function() {
+            addSymbolAnimations('#blue');
+            expect(!$('#blue').hasClass('tada')).toBe(false);
         });
     });
 });
