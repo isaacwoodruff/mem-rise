@@ -259,5 +259,31 @@ describe("Game logic", function() {
             generateMove();
             expect(["#green", "#blue", "#orange", "#purple", "#yellow"]).toContain(game.currentGame.toString())
         });
+        it('should call the highlightSelections function', function() {
+            spyOn(window,'highlightSelections');
+            generateMove();
+            expect(window.highlightSelections).toHaveBeenCalled();
+        });
+    });
+    
+    describe('highlightSelections function', function() {
+        it('should call addSymbolAnimations on the values in the game.currentGame array', function() {
+            spyOn(window,'addSymbolAnimations');
+            highlightSelections();
+            expect(window.addSymbolAnimations).toHaveBeenCalled();
+        });
+        it('should call removeSymbolAnimations on the values in the game.currentGame array', function() {
+            jasmine.clock().install();
+            spyOn(window,'removeSymbolAnimations');
+            highlightSelections();
+            jasmine.clock().tick(700);
+            expect(window.removeSymbolAnimations).toHaveBeenCalled();
+            jasmine.clock().uninstall();
+        });
+        it('should call the resetPreviousPlayerSelection function', function() {
+            spyOn(window,'resetPreviousPlayerSelection');
+            highlightSelections();
+            expect(window.resetPreviousPlayerSelection).toHaveBeenCalled();
+        });
     });
 });
