@@ -251,6 +251,13 @@ describe("Game logic", function() {
             addCount();
             expect(window.generateMove).toHaveBeenCalled();
         });
-        
+    });
+    
+    describe('generateMove function', function() {
+        it('should select a random value from the game.symbolsArray and push it to game.currentGame', function() {
+            newGame();
+            generateMove();
+            expect(["#green", "#blue", "#orange", "#purple", "#yellow"]).toContain(game.currentGame.toString())
+        });
     });
 });
