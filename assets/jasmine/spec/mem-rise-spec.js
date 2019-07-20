@@ -213,6 +213,7 @@ describe("Game logic", function() {
     beforeEach(() => {
         setFixtures(`
             <div id="continue-btn"><div>
+            <div id="ready-btn"><div>
             <div id="score-number"><div>
             <div id="#blue"><div>
         `);
@@ -319,6 +320,28 @@ describe("Game logic", function() {
             spyOn(window,'checkPlayerSelection');
             playerSelection();
             expect(window.checkPlayerSelection).toHaveBeenCalled();
+        });
+    });
+    
+    describe('checkPlayerSelection function', function() {
+        it('should display the #continue-btn if the player move is correct', function() {
+            game.player = ['#blue','#green'];
+            game.currentGame = ['#blue','#green'];
+            checkPlayerSelection();
+            expect($('#continue-btn').hasClass('d-none')).toBe(false);
+        });
+        it('should call addCount function if the player move is correct', function() {
+            game.player = ['#blue','#green'];
+            game.currentGame = ['#blue','#green'];
+            spyOn(window,'addCount');
+            checkPlayerSelection();
+            expect(window.addCount).toHaveBeenCalled();
+        });
+        it('should display the #ready-btn if the player move is incorrect', function() {
+            game.player = ['#blue'];
+            game.currentGame = ['#blue','#green'];
+            checkPlayerSelection();
+            expect($('#ready-btn').hasClass('d-none')).toBe(false);
         });
     });
 });
