@@ -113,3 +113,35 @@ The website is a one page design with the relevant menus/views being displayed a
     **Features:**
     - This button would reset the game at any time the user wants
 
+## Technologies Used
+
+The project uses **JavaScript**, **CSS**, and **HTML** programming languages.
+
+- [Cloud9](https://aws.amazon.com/cloud9/) 
+    - The IDE **Cloud9** was used throughout the project for development.
+- [JQuery](https://jquery.com)
+    - The project uses **JQuery** to simplify DOM manipulation.
+- [Jasmine](https://jasmine.github.io/)
+    - This project uses **Jasmine** to automatically test all the JavaScript and jQuery code.
+- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)
+    - This project uses **Jasmine-jQuery** to allow Jasmine to test jQuery code.
+- [Bootstrap](https://getbootstrap.com/)
+    - The project uses the **Bootstrap** framework to help create a responsive design.
+- [Git](https://git-scm.com)
+    - The project uses **Git** for version control during the development process. 
+- [GitHub](https://github.com/)
+    - The project uses **GitHub** for a remote repository.
+- [Google Fonts](https://fonts.google.com/)
+    - The project uses **Google Fonts** to style the fonts in the website.
+- [FontAwesome](https://fontawesome.com/)
+    - The project uses **FontAwesome** to create navigation icons.
+- [Animate.css](https://daneden.github.io/animate.css/)
+    - The project uses **Animate.css** to animate the symbols and the game title.
+- [Textillate](http://textillate.js.org/) & [Lettering](http://letteringjs.com/)
+    - The project uses **Textillate.js** with **Lettering.js** to animate the game title.
+- [Figma](https://www.figma.com/)
+    - The project used **Figma** to build wireframes in the planning stage of development.
+- [Pixlr](https://pixlr.com/)
+    - The project used **Pixlr** to add an overlay to the background image which darkened it.
+- [AutoPrefixer](https://autoprefixer.github.io/)
+    - The project used **AutoPrefixer** to add prefixes in the CSS for cross-browser support.
