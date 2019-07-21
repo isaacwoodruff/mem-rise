@@ -206,6 +206,10 @@ Note: I was unable to properly test the website on a mobile device with Safari. 
 - Each time the player makes a correct selection and progresses to the next level, they are shown a random positive message which offers them a sense of achievement.
 - The project uses a neon, retro futuristic background throughout the game as well as effects and fonts relating to the genre.
 
+### Bugs
+
+A click event listener had been added for the Continue button inside the addCount function so that when the Continue button was visible it would add a click event. Once clicked the Continue button would call the function generateMove then hide itself (the Continue button). But an issue occured were it would generate multiple moves once the Continue button was clicked. This was because it added a click event listener EVERY time my addCount function was called. It basically stacked the click listeners so that if, for example, it had been clicked 3 times previously and was clicked again it would run the code inside the click event listener 4 times causing the generateMove function to be called 4 times instead of 1. The developer realised that the click event listener should just be added when the document loads so it only adds it once.
+
 ## Deployment
 
 The AWS IDE, [Cloud9](https://aws.amazon.com/cloud9/) was used to develop the project. The version control system, [Git](https://git-scm.com) was used to commit and track changes. These commits were pushed to the hosting platform [GitHub](https://github.com/) which was used to store the repository, and to deploy the project on [GitHub Pages](https://pages.github.com/) for a live demo. The deployed site is automatically updated through the master branch when new commits are pushed to the repository.
