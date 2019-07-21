@@ -69,7 +69,7 @@ The website is a one page design with the relevant menus/views being displayed a
     - A Leaderboard with the top scores from fictional players
     - A retro futuristic background image
 
-<div align="center" max-width="500px">
+<div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/main-menu.png" alt="Mem'rise main menu">
 </div>
 
@@ -83,7 +83,7 @@ The website is a one page design with the relevant menus/views being displayed a
     - A menu icon which brings up a menu with a list of navigation links
     - Positive messages displayed at random each time the player makes a correct move
 
-<div align="center" max-width="500px">
+<div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/game-view.png" alt="Mem'rise game view">
 </div>
 
@@ -93,7 +93,7 @@ The website is a one page design with the relevant menus/views being displayed a
     - An explanation of how to navigate through the website
     - A background overlay that changes depending on the screen size
 
-<div align="center" max-width="500px">
+<div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/help-menu.png" alt="Mem'rise help menu">
 </div>
 
@@ -104,7 +104,7 @@ The website is a one page design with the relevant menus/views being displayed a
     - A back arrow which navigates to the main menu
     - A background overlay that changes depending on the screen size
 
-<div align="center" max-width="500px">
+<div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/menu-list.png" alt="Mem'rise menu list">
 </div>
 
