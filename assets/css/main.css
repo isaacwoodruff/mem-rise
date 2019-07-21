@@ -105,6 +105,22 @@ h1 {
   margin: auto;
 }
 
+/* Contact */
+
+#contact {
+  max-width: 400px;
+  margin: auto;
+  top: 200px;
+}
+
+#contact .btn {
+  margin-top: 20px;
+}
+
+#contact .center-form {
+  margin: 30px;
+}
+
 /* Game view */
 
 #game-view {

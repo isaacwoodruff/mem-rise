@@ -36,7 +36,7 @@ $('#menu-icon').click(function() {
 });
 
 function menuIcon(){
-    $('#help-menu, #game-view, #score').addClass('d-none');
+    $('#help-menu, #game-view, #score, #contact').addClass('d-none');
     $('#back-and-menu-icons, #menu-list, #background-overlay').removeClass('d-none');
 }
 /*
@@ -50,10 +50,10 @@ $('#back-arrow').click(function() {
 
 function backArrow(){
     if (!$('#game-view').hasClass('d-none')) {
-        $('#game-view, #back-and-menu-icons, #score, #background-overlay').addClass('d-none');
+        $('#game-view, #back-and-menu-icons, #score, #background-overlay, #contact').addClass('d-none');
         $('#main-menu').removeClass('d-none');
     }else {
-        $('#main-menu, #menu-list, #help-menu, #background-overlay').addClass('d-none');
+        $('#main-menu, #menu-list, #help-menu, #background-overlay, #contact').addClass('d-none');
         $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
     }
 }
@@ -81,6 +81,17 @@ function readyButton(){
         $('#game-view-text').text("");
         newGame();
     }, 1000);
+}
+
+// Contact links
+
+$('#contact-link').click(function() {
+    contactLink();
+});
+
+function contactLink(){
+    $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
+    $('#contact, #back-and-menu-icons, #background-overlay').removeClass('d-none');
 }
 
 // Text Animations
@@ -256,4 +267,24 @@ function removeSymbolAnimations(symbolSetValue) {
     $(symbolSetValue).removeClass('highlight');
     $(symbolSetValue).removeClass('animated');
     $(symbolSetValue).removeClass('tada');
+}
+
+// Email.js code
+
+function sendMail(contactForm) {
+    emailjs.send('gmail', 'memrise', {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.emailaddress.value,
+        "message": contactForm.message.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+            $('#contact-form').html('<h3 class="mt-5 pt-5" >Sent!</h3>');
+        },
+        function(error) {
+            console.log("FAILED", error);
+        }
+    );
+    return false;
 }

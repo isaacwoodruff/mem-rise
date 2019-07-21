@@ -18,6 +18,14 @@
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
     <title>Mem'rise</title>
+    
+    <!-- Email.js -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_A3bRjrIGlAwVkonzwfcRG");
+        })();
+    </script>
 </head>
 
 <body>
@@ -67,8 +75,7 @@
     <section id="menu-list" class="d-none position-absolute-center">
         <div class="vertical-wrapper">
             <h3 id="main-menu-link" class="blue-shadow-hover">Main Menu</h3>
-            <h3>Leaderboard</h3>
-            <h3>Contact</h3>
+            <h3 id="contact-link" class="blue-shadow-hover">Contact</h3>
             <h3 class="help-menu-link blue-shadow-hover">Help</h3>
         </div>
     </section>
@@ -95,6 +102,21 @@
             <p id="game-view-text" class="position-absolute-center">Click Ready<br>To Begin</p>
             <button id="ready-btn" class="btn">Ready</button>
             <button id="continue-btn" class="btn d-none">Continue</button>
+        </div>
+    </section>
+    <section id="contact" class="d-none position-absolute-center">
+        <div class="vertical-wrapper">
+            <div>
+                <h3 class="text-center">Contact Us</h3>
+            </div>
+            <div class="center-form">
+                <form id="contact-form" onsubmit="return sendMail(this);" method="POST">
+                    <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+                    <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                    <textarea rows="5" name="message" class="form-control" id="message" placeholder="Type your message here" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
         </div>
     </section>
 
