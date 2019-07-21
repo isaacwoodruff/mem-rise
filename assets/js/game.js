@@ -288,3 +288,21 @@ function sendMail(contactForm) {
     );
     return false;
 }
+
+let backAudio = new Audio('assets/audio/stranger-think.mp3');
+
+$('.audio-button').click(function() {
+    $('.mute').toggleClass('d-none');
+    $('.unmute').toggleClass('d-none');
+    
+    if($('.mute').hasClass('d-none')){
+        backAudio.play();
+    } else {
+        backAudio.pause();
+    }
+});
+
+backAudio.addEventListener('ended', function() {
+    backAudio.currentTime = 0;
+    backAudio.play();
+}, false);
