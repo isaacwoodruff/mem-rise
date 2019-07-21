@@ -175,3 +175,35 @@ The AWS IDE, [Cloud9](https://aws.amazon.com/cloud9/) was used to develop the pr
 
 Your local clone is now created. If you would like further documentation on cloning a repository, you can read [Cloning a repository](https://help.github.com/en/articles/cloning-a-repository).
 
+## Credits
+
+### Content
+- All text within this project was written by the developer.
+
+##### Code
+
+- The code for adding cross browser functionality by creating the correct prefixes for the CSS was created by using [AutoPrefixer](https://autoprefixer.github.io/).
+- The basic structure/ design idea for setting up a memory game like this was recreated using this tutorial from  [mrkaluzny](https://mrkaluzny.com/create-simon-game-in-javascript/).
+
+### Media
+
+- The images from the symbol set in the game view:
+    - The yellow symbol was downloaded from [Vexels](https://www.vexels.com/png-svg/preview/164597/solar-plexus-chakra-symbol).
+    - The purple symbol was downloaded from [Vexels](https://www.vexels.com/png-svg/preview/163909/crown-chakra-symbol).
+    - The orange symbol was downloaded from [Vexels](https://www.vexels.com/png-svg/preview/164539/sacral-chakra-symbol).
+    - The blue symbol was downloaded from [Vexels](https://www.vexels.com/png-svg/preview/164628/throat-chakra-symbol).
+    - The green symbol was downloaded from [Vexels](https://www.vexels.com/png-svg/preview/164284/heart-chakra-symbol).
+
+- The background image was downloaded from [CellCode](https://i2.wp.com/singularityhub.com/wp-content/uploads/2017/10/futuristic-retro-landscape-digital-sun-setting-desert-80s-696426469-internet-archive.jpg).
+
+### Acknowledgements
+
+- I gained a deeper understanding of **Scopes** and **Closures** in JavaScript from this video tutorial [Understanding Variable Scope & Closures Without Losing your Mind](https://www.youtube.com/watch?v=iSlSxDNarDY).
+- I also gained a better understanding of the **Call Stack**, **Event Queue**, **timeouts**, **loops**, and about **Scope** from this article [Thrown for a loop: understanding for loops and timeouts in JavaScript](https://www.freecodecamp.org/news/thrown-for-a-loop-understanding-for-loops-and-timeouts-in-javascript-558d8255d8a4/).
+    
+- I received inspiration for this project from this minimal memory game called [circles](https://beautifulpixels.com/game/circles-is-an-elegant-and-minimal-memory-game/).
+
+Thanks to:
+
+- My Code Institute Mentor Mark Railton for his advise throughout the development process.
+- To all of the Code Institutes Slack community for helping with my issues, reviewing my code, and giving me tips.
