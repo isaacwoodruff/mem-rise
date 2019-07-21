@@ -75,6 +75,7 @@ The website is a one page design with the relevant menus/views being displayed a
     - A How To Play link which displays the help menu
     - A Leaderboard with the top scores from fictional players
     - A retro futuristic background image
+    - An audio button that can be toggled to play/pause the background music
 
 <div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/main-menu.png" alt="Mem'rise main menu">
@@ -110,30 +111,35 @@ The website is a one page design with the relevant menus/views being displayed a
     - A link to the Help menu
     - A back arrow which navigates to the main menu
     - A background overlay that changes depending on the screen size
+    - An audio button that can be toggled to play/pause the background music
 
 <div align="center">
   <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/menu-list.png" alt="Mem'rise menu list">
 </div>
 
+5. #### Contact section
+    **Features:**
+    - This has a form with which the user is able to send a message to the developer
+    - It utilises Email.js 
+
+<div align="center">
+  <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/contact-section.png" alt="Mem'rise contact form">
+</div>
+
 ### Features Left to Implement
 
-1. #### Contact section
-    **Features:**
-    - This would have a form with which the user would be able to send a message to the developer
-    - It would utilise Email.js
-
-2. #### Leaderboard section
+1. #### Leaderboard section
     **Features:**
     - This would have a graph with the user scores, averages, and times played
     - It would utilise D3.js
 
-3. #### Difficulty mode
+2. #### Difficulty mode
     **Features:**
     - This would have the option to change the game difficulty between normal and hard
     - Normal mode would be the game as it currently is
     - Hard mode would make all the symbols spin clockwise increasingly the higher score a player has
 
-4. #### Reset button
+3. #### Reset button
     **Features:**
     - This button would reset the game at any time the user wants
 
