@@ -1,6 +1,6 @@
 // Navigation
 
-// When Start button is clicked it hides the main menu, then shows the game view and back/menu icons
+// When Start button is clicked it calls startButton which hides the main menu, then shows the game view and back/menu icons
 $('#start-btn').click(function() {
     startButton();
 });
@@ -10,7 +10,7 @@ function startButton(){
     $('#game-view, #back-and-menu-icons, #score').removeClass('d-none');
 }
 
-// When How To Play/ Help menu link is clicked it hides the main menu, menu list, then game view and shows the help menu
+// When How To Play/ Help menu link is clicked it calls helpMenuLinks which hides the main menu, menu list, then game view and shows the help menu
 $('.help-menu-link').click(function() {
     helpMenuLinks();
 });
@@ -19,7 +19,8 @@ function helpMenuLinks(){
     $('#main-menu, #menu-list, #game-view, #score').addClass('d-none');
     $('#help-menu, #back-and-menu-icons, #background-overlay').removeClass('d-none');
 }
-// When the Main Menu link is clicked in the menu list it hides the menu list and back/menu icons, then shows the main menu
+
+// When the Main Menu link is clicked in the menu list it calls mainMenuLink which hides the menu list and back/menu icons, then shows the main menu
 $('#main-menu-link').click(function() {
     mainMenuLink();
 });
@@ -29,7 +30,7 @@ function mainMenuLink() {
     $('#main-menu').removeClass('d-none');
 }
 
-// When the 3 stacked bars icon is clicked it hides the help menu and game view, then shows the menu list
+// When the 3 stacked bars icon is clicked it calls menuIcon which hides the help menu and game view, then shows the menu list
 $('#menu-icon').click(function() {
     menuIcon();
 });
@@ -39,7 +40,7 @@ function menuIcon(){
     $('#back-and-menu-icons, #menu-list, #background-overlay').removeClass('d-none');
 }
 /*
-    When back arrow icon is clicked
+    When back arrow icon is clicked it calls backArrow which
     if game view is not the current window it hides help menu, menu list and main menu, then shows game view
     else it hides the game view, back/menu icons, then shows main menu
 */
@@ -57,7 +58,7 @@ function backArrow(){
     }
 }
 
-// When the continue button is clicked it will hide itself and continue to generate a move
+// When the continue button is clicked it calls continueButton which will hide itself and continue to generate a move
 $('#continue-btn').click(function() {
     continueButton();
 });
@@ -68,7 +69,7 @@ function continueButton(){
     generateMove();
 }
 
-// When the ready button is clicked it will hide itself and start a new game
+// When the ready button is clicked it calls readyButton which will hide itself and start a new game
 $('#ready-btn').click(function() {
     readyButton();
 });
