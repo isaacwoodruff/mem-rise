@@ -2,6 +2,7 @@
 
 [Mem'rise](https://isaacwoodruff.github.io/mem-rise/) is a retro, neon colored memory game for all ages. You must memorise a randomly generated sequence of symbols and try to repeat it. The game combines beautifully crafted animations, fonts, and colors with encouraging messages to provide an engaging user experience.
 
+[View the Mem'rise website here](https://isaacwoodruff.github.io/mem-rise/)
 
 ## UX
 
@@ -68,6 +69,10 @@ The website is a one page design with the relevant menus/views being displayed a
     - A Leaderboard with the top scores from fictional players
     - A retro futuristic background image
 
+<div align="center">
+  <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/main-menu.png" alt="Mem'rise main menu">
+</div>
+
 2. #### Game view
     **Features:**
     - A set of 5 symbols that show animations and box shadow effects when clicked
@@ -78,11 +83,19 @@ The website is a one page design with the relevant menus/views being displayed a
     - A menu icon which brings up a menu with a list of navigation links
     - Positive messages displayed at random each time the player makes a correct move
 
+<div align="center">
+  <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/game-view.png" alt="Mem'rise game view">
+</div>
+
 3. #### Help menu
     **Features:**
     - An explanation of how to play the game
     - An explanation of how to navigate through the website
     - A background overlay that changes depending on the screen size
+
+<div align="center">
+  <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/help-menu.png" alt="Mem'rise help menu">
+</div>
 
 4. #### Menu list
     **Features:**
@@ -90,6 +103,10 @@ The website is a one page design with the relevant menus/views being displayed a
     - A link to the Help menu
     - A back arrow which navigates to the main menu
     - A background overlay that changes depending on the screen size
+
+<div align="center">
+  <img href="https://isaacwoodruff.github.io/mem-rise/" target="_blank"><img src="assets/images/readme-images/menu-list.png" alt="Mem'rise menu list">
+</div>
 
 ### Features Left to Implement
 
