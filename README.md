@@ -148,6 +148,32 @@ The project uses **JavaScript**, **CSS**, and **HTML** programming languages.
 - [Google Chrome - Dev Tools](https://www.google.com/chrome/)
     - The project used **Google Chrome - Dev Tools** to test responsiveness, to debug code by utilising breakpoints and the console, and to speed up the design process.
 
+## Testing
+
+### Automated Testing
+
+#### Validation Tools
+
+These tools were used to test the validity of the code for this project:
+- [W3C HTML Validator]( https://validator.w3.org/) was used to validate HTML.
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
+- [JSHint](https://jshint.com/) was used to validate JavaScript.
+
+#### Jasmine
+
+[Jasmine.js](https://jasmine.github.io/) was used to test the majority of functions within the JavaScript code. It was used alongside [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery) to allow the use of jQuery within the Jasmine tests.
+
+You can find the deployed Jasmine test page [here](https://isaacwoodruff.github.io/mem-rise/assets/jasmine/jasmine-testing).
+You can also find the repositories folder for Jasmine [here](https://github.com/isaacwoodruff/mem-rise/tree/master/assets/jasmine).
+
+### Manual Testing
+
+#### Testing Matrix
+
+A testing matrix was created using a spreadsheet builder in LibreOffice. It details all of the tests to make sure the site is responsive to different screen sizes, devices, and browsers. The testing matrix can be found [here](https://github.com/isaacwoodruff/mem-rise/blob/master/testing-matrix.pdf).
+
+Note: I was unable to properly test the website on a mobile device with Safari. I didn't have access to one and the in-browser, and downloaded emulators I used didn't show any errors that some users were reporting with the Game View section.
+
 ## Deployment
 
 The AWS IDE, [Cloud9](https://aws.amazon.com/cloud9/) was used to develop the project. The version control system, [Git](https://git-scm.com) was used to commit and track changes. These commits were pushed to the hosting platform [GitHub](https://github.com/) which was used to store the repository, and to deploy the project on [GitHub Pages](https://pages.github.com/) for a live demo. The deployed site is automatically updated through the master branch when new commits are pushed to the repository.
