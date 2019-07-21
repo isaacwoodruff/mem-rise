@@ -42,6 +42,13 @@ The developers goals were to:
 
 ### User Stories
 
+#### As a player of [Mem'rise](https://isaacwoodruff.github.io/mem-rise/), I want:
+- To play an attractive looking game to keep me focused
+- Simple to understand controls, and navigation
+- Information on how to use the game, and how to play it
+- A sense of achievement when a level is completed
+- A heavy influence from the genre of neon, retro futurism
+
 ### Wireframes
 
 The wireframes were creating using [Figma](https://www.figma.com).
@@ -190,6 +197,14 @@ You can also find the repositories folder for Jasmine [here](https://github.com/
 A testing matrix was created using a spreadsheet builder in LibreOffice. It details all of the tests to make sure the site is responsive to different screen sizes, devices, and browsers. The testing matrix can be found [here](https://github.com/isaacwoodruff/mem-rise/blob/master/testing-matrix.pdf).
 
 Note: I was unable to properly test the website on a mobile device with Safari. I didn't have access to one and the in-browser, and downloaded emulators I used didn't show any errors that some users were reporting with the Game View section.
+
+### How User Stories Needs Were Met
+
+- The project has a minimal design which combines interesting graphics, shadow effects, and animations. All this makes it a unique and attractive experience to keep the player engaged.
+- The navigation and controls were designed with simplicity in mind. By placing them in approriate places and using relevant icons/ calls to action they are very intuitive to understand.
+- The project comes equipt with a How To guide which tells the user how to play the game and how to navigate the website.
+- Each time the player makes a correct selection and progresses to the next level, they are shown a random positive message which offers them a sense of achievement.
+- The project uses a neon, retro futuristic background throughout the game as well as effects and fonts relating to the genre.
 
 ## Deployment
 
